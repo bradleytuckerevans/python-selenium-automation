@@ -1,0 +1,21 @@
+from time import sleep
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+
+# init driver
+driver = webdriver.Chrome(executable_path='C:\\Users\\bradevans\\Desktop\\python-selenium-automation\\python-selenium-automation\\chromedriver.exe')
+driver.maximize_window()
+
+driver.get('https://www.amazon.com')
+
+search_filed = driver.find_element(By.ID, 'twotabsearchtextbox').send_keys('coffee')
+
+
+
+expected_result = '"coffeeeee"'
+actual_result = driver.find_element(By.XPATH, "//span[@class='a-color-state a-text-bold']").text
+
+
+assert expected_result == actual_result, f"Expected text {expected_result} did not match actual {actual_result}"
+print('Test case passed')
+driver.quit()
