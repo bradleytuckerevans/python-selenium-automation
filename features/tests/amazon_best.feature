@@ -1,7 +1,7 @@
 # Created by bradevans at 2/25/2022
-Feature: Tests for Amazon Bestsellers
+Feature: Tests for Bestsellers
   # Enter feature description here
 
-  Scenario: User can search for  Best seller links
+  Scenario: Bestsellers links can be opened
     Given Open Amazon BestSellers
-    Then Verify 5 links present
+    Then User can click through top links and verify correct
