@@ -5,10 +5,21 @@
 #Example: [7, 3, 5, 6, 4, 10, 3, 2] Return [6, 4, 10, 2, 7, 3, 5, 3]
 
 def even_first(arr):
-    even_array = []
-    odd_array = []
-    i = 0
+    even_num = 0
+    odd_num = len(arr) - 1
+    while even_num < odd_num:
+        if arr[even_num] % 2 == 0:
+            even_num += 1
+        else:
+            arr[even_num], arr[odd_num] = arr[odd_num], arr[even_num]
+            odd_num -= 1
 
+    return arr
+
+"""""
+def even_first(arr):
+    even_array = 0
+    odd_array = len(arr) -1
     while i < len(arr):
         if arr[i] % 2 == 0:
             even_array.append(arr[i])
@@ -17,11 +28,12 @@ def even_first(arr):
         i = i + 1
     return (even_array + odd_array)
 
-
+"""""
 
 
 
 list_even = [7, 3, 5, 6, 4, 10, 3, 2]
+
 print(even_first(list_even))
 
 
