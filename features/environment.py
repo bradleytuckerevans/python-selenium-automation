@@ -10,14 +10,14 @@ def browser_init(context):
     """
     context.driver = webdriver.Chrome(executable_path='C:\\Users\\bradevans\\Desktop\\python-selenium-automation\\python-selenium-automation\chromedriver.exe')
     # context.browser = webdriver.Safari()
-    # context.browser = webdriver.Firefox()
+    #context.browser = webdriver.Firefox(executable_path='C:\\Users\\bradevans\\Desktop\\python-selenium-automation\\python-selenium-automation\geckodriver.exe')
 
     context.driver.maximize_window()
     context.driver.implicitly_wait(4)
     context.driver.wait = WebDriverWait(context.driver, 10)
     context.app = Application(context.driver)
 
-
+#steps
 def before_scenario(context, scenario):
     print('\nStarted scenario: ', scenario.name)
     browser_init(context)
